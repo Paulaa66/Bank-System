@@ -5,36 +5,42 @@ using namespace std;
 
 class Person {
 protected:
-    string nameofperson;
-    string passwordofperson;
-    int idofperson;
+    // ================Attriputes===================
+    string name;
+    string password;
+    int id;
 public:
+    // ============default constructor==============
     Person(){
-        idofperson = 0;
+        id = 0;
     }
-    Person(string name,int id,string password){
-        this->nameofperson = name;
-        this->idofperson = id;
-        this->passwordofperson = pw;
+    // ==========parameterized constructor==========
+    Person(string name,string password , int id){
+        this->name = name;
+        this->password = pw;
+        this->id = id;
     }
+    // ==================Setters====================
     void setName(string name){
-        this->nameofperson = name;
+        this->name = name;
+    }
+    void setPassword(string password){
+        this->password = pw;
     }
     void setId(int id){
-        this->idofperson = id;
+        this->id = id;
     }
-    void setPw(string password){
-        this->passwordofperson = pw;
-    }
+    // =================Getters====================
     string getName(){
-        return nameofperson;
+        return name;
+    }
+    string getPassword(){
+        return password;
     }
     int getId(){
-        return idofperson;
+        return id;
     }
-    string getPw(){
-        return passwordofperson;
-    }
+    // ================Method======================
     virtual void Display() = 0;
 };
 

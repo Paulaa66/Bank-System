@@ -6,18 +6,16 @@ using namespace std;
 class Person {
 protected:
     // ================Attriputes===================
-    string name;
-    string password;
+    string name,password;
     int id;
 public:
-    // ============default constructor==============
+    // ============constructors==============
     Person(){
         id = 0;
     }
-    // ==========parameterized constructor==========
     Person(string name,string password , int id){
         this->name = name;
-        this->password = pw;
+        this->password = password;
         this->id = id;
     }
     // ==================Setters====================
@@ -25,7 +23,7 @@ public:
         this->name = name;
     }
     void setPassword(string password){
-        this->password = pw;
+        this->password = password;
     }
     void setId(int id){
         this->id = id;

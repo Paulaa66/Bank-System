@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1723483256 source:c:\users\dell\desktop\project team phase 1\main.cpp
+	<iostream>
+	<string>
+	<cctype>
+	<algorithm>
+

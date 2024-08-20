@@ -1,11 +1,20 @@
 <<<<<<< HEAD
 #include <iostream>
+<<<<<<< HEAD
 #include"Clint.h"
+=======
+#include "Person.h"
+#include "Client.h"
+>>>>>>> Ahmed
 using namespace std;
 
 int main()
 {
+<<<<<<< HEAD
     Clint a("marwan","maroYasser",333,3000);
+=======
+
+>>>>>>> Ahmed
     cout << "Hello world!" << endl;
     a.Display();
 }

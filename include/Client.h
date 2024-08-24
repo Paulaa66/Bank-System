@@ -17,12 +17,19 @@ public:
         this->balance = balance;
     }
     // ==================Setters====================
-    void setBalance(double balance) {
-        if (balance >= 1500) {
-            this->balance = balance;
-        }
-        else {
-            cout << "balance must be more than 1500 to added\n";
+    void setBalance() {
+        while(true)
+        {
+            cout << "Please Enter Your Balance :";
+            double balance;
+            cin >> balance;
+            if (balance >= 5000) {
+                this->balance = balance;
+            break;
+            }
+            else {
+                cout << "Balance must be more than 5000 to added\n";
+            }
         }
     }
     // =================Getters====================

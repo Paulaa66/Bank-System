@@ -2,10 +2,5 @@
 
 Client::Client()
 {
-    //ctor
-}
 
-Client::~Client()
-{
-    //dtor
-}
+};

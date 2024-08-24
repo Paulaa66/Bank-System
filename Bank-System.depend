@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1724526850 source:d:\private\courses\programming\route projects\bank system\bank-system\main.cpp
+	<iostream>
+	<string>
+	<cctype>
+	<algorithm>
+	"Person.h"
+	"Client.h"
+	"Employee.h"
+
+1724526827 d:\private\courses\programming\route projects\bank system\bank-system\include\person.h
+	<iostream>
+	<string>
+
+1724526420 d:\private\courses\programming\route projects\bank system\bank-system\include\client.h
+	<iostream>
+	<string>
+	"Person.h"
+
+1724526051 d:\private\courses\programming\route projects\bank system\bank-system\include\employee.h
+

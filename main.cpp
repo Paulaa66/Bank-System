@@ -9,7 +9,7 @@ using namespace std;
 
 int main()
 {
-    Employee e1;
+    Employee e;
     e.setName();
     e.setPassword();
     e.setId();

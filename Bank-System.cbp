@@ -39,10 +39,6 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="Client.cpp" />
-		<Unit filename="Client.h">
-			<Option virtualFolder="include/" />
-		</Unit>
 		<Unit filename="include/Client.h" />
 		<Unit filename="include/Employee.h" />
 		<Unit filename="include/Person.h" />

@@ -19,3 +19,23 @@
 
 1724526051 d:\private\courses\programming\route projects\bank system\bank-system\include\employee.h
 
+1724527443 source:c:\users\dell\desktop\bank system\bank-system\main.cpp
+	<iostream>
+	<string>
+	<cctype>
+	<algorithm>
+	"Person.h"
+	"Client.h"
+	"Employee.h"
+
+1724527443 c:\users\dell\desktop\bank system\bank-system\include\person.h
+	<iostream>
+	<string>
+
+1724527443 c:\users\dell\desktop\bank system\bank-system\include\client.h
+	<iostream>
+	<string>
+	"Person.h"
+
+1724527443 c:\users\dell\desktop\bank system\bank-system\include\employee.h
+

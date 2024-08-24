@@ -5,17 +5,18 @@ using namespace std;
 
 class Client : public Person {
 private:
-    //attributes:
+    // ================Attriputes===================
     double balance;
 public:
-    //constructor:
+    // ============constructors==============
     Client() {
         balance = 0;
     }
+    // ==========parameterized constructor==========
     Client(string name, string password, int id, double balance) : Person(name, password, id) {
         this->balance = balance;
     }
-    //setters:
+    // ==================Setters====================
     void setBalance(double balance) {
         if (balance >= 1500) {
             this->balance = balance;
@@ -24,43 +25,37 @@ public:
             cout << "balance must be more than 1500 to added\n";
         }
     }
-    void setName(string name) {
-        if (name.length() >= 6 && name.length() <= 20) {
-            this->name = name;
-        }
-        else {
-            cout << "name must be more than 6 letters and less than 20 letters\n";
-        }
-    }
-
-    //getters:
+    // =================Getters====================
     double getBalance() {
         return this->balance;
     }
-
-    //methods:
-    void Display() {
-        cout << "name     : " << name << endl;
-        cout << "id       : " << id << endl;
-        cout << "password : " << password << endl;
-        cout << "balance  : " << balance << endl;
-    }
+    // ================Method======================
     void deposite(double amount) {
         this->balance += amount;
     }
     void withdraw(double amount) {
         if (amount > balance) {
-            cout << "can not withdraw this amount" << endl;
+            cout << "Can't withdraw this amount" << endl;
         }
         else
             this->balance -= amount;
     }
-    void transferto(double amount, Client c) {
+    void transferto(double amount, Client &c) {
         if (amount <= balance) {
+            balance -= amount;
             c.deposite(amount);
         }
         else
-            cout << "can not withdraw this amount" << endl;
+            cout << "Can't withdraw this amount" << endl;
+    }
+    void checkBalance() {
+        cout << "Your Balance is = " << balance << endl;
+    }
+    void Display() {
+        cout << "Name     : " << name << endl;
+        cout << "Id       : " << id << endl;
+        cout << "Password : " << password << endl;
+        cout << "Balance  : " << balance << endl;
     }
 
 };

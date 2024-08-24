@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1724526850 source:d:\private\courses\programming\route projects\bank system\bank-system\main.cpp
+1724534703 source:d:\private\courses\programming\route projects\bank system\bank-system\main.cpp
 	<iostream>
 	<string>
 	<cctype>
@@ -8,16 +8,21 @@
 	"Client.h"
 	"Employee.h"
 
-1724526827 d:\private\courses\programming\route projects\bank system\bank-system\include\person.h
+1724534343 d:\private\courses\programming\route projects\bank system\bank-system\include\person.h
 	<iostream>
 	<string>
+	<cctype>
+	<algorithm>
 
-1724526420 d:\private\courses\programming\route projects\bank system\bank-system\include\client.h
+1724534331 d:\private\courses\programming\route projects\bank system\bank-system\include\client.h
 	<iostream>
 	<string>
 	"Person.h"
 
-1724526051 d:\private\courses\programming\route projects\bank system\bank-system\include\employee.h
+1724534335 d:\private\courses\programming\route projects\bank system\bank-system\include\employee.h
+	<iostream>
+	<string>
+	"Person.h"
 
 1724527443 source:c:\users\dell\desktop\bank system\bank-system\main.cpp
 	<iostream>

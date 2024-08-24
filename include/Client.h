@@ -1,19 +1,18 @@
-
 #include<iostream>
 #include<string>
 #include"Person.h"
 using namespace std;
 
-class Clint:public Person{
+class Client : public Person{
     //attributes:
 private:
     double balance;
 public:
     //constructor:
-    Clint(){
+    Client(){
         this->balance=0;
     }
-    Clint(string name,string password , int id,double bal){
+    Client(string name,string password , int id,double bal){
         this->name=name;
         this->password=password;
         this->id=id;

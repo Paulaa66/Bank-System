@@ -43,6 +43,7 @@
 		<Unit filename="Client.h">
 			<Option virtualFolder="include/" />
 		</Unit>
+		<Unit filename="include/Client.h" />
 		<Unit filename="include/Employee.h" />
 		<Unit filename="include/Person.h" />
 		<Unit filename="main.cpp" />

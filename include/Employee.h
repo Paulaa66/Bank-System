@@ -18,12 +18,20 @@ public:
     }
 
     // ==================Setters====================
-    void setSalary(double salary) {
-        if (salary >= 5000) {
-            this->salary = salary;
-        }
-        else {
-            cout << "Salary must be more than 5000 to added\n";
+    void setSalary()
+     {
+        while(true)
+        {
+            cout << "Please Enter Your Salary :";
+            double salary;
+            cin >> salary;
+            if (salary >= 5000) {
+                this->salary = salary;
+            break;
+            }
+            else {
+                cout << "Salary must be more than 5000 to added\n";
+            }
         }
     }
     // =================Getters====================

@@ -14,7 +14,7 @@ protected:
 public:
     // ============constructors==============
     Person() {
-        id = 0;
+        id = 999;
     }
     // ==========parameterized constructor==========
     Person(string name, string password, int id) {
@@ -23,49 +23,56 @@ public:
         this->id = id;
     }
     // ==================Setters====================
-    void setName(string name) {
-        bool hasDigit = false;
-        for (char c : name) {
-            if (isdigit(c)) {
-                hasDigit = true;
-                break;
+    void setName() {
+            while (true) {
+            cout << "Please Enter Your Name: ";
+            string name;
+            cin >> name;
+
+            bool hasDigit = false;
+            for (char c : name) {
+                if (isdigit(c)) {
+                    hasDigit = true;
+                    break;
+                }
             }
-        }
-        if (hasDigit) {
-            cout << "Warning: Name must contain only alphabetic characters.\n";
-        }
-        else {
-            // Check if the name length is between 5 and 20 characters
-            if (name.length() < 5 || name.length() > 20) {
+
+            if (hasDigit) {
+                cout << "Warning: Name must contain only alphabetic characters.\n";
+            } else if (name.length() < 5 || name.length() > 20) {
                 cout << "Warning: Name must be between 5 and 20 characters.\n";
-            }
-            else {
+            } else {
                 this->name = name;
+                break; // Exit loop if name is valid
             }
         }
     }
-    void setPassword(string password) {
-            // Check if the password length is between 8 and 20 characters
+    void setPassword() {
+              while (true) {
+            cout << "Please Enter Your Password : ";
+            string password;
+            cin >> password;
+
             if (password.length() < 8 || password.length() > 20) {
                 cout << "Warning: Password must be between 8 and 20 characters.\n";
+                continue;
             }
 
-            // Check if the password contains at least one uppercase letter, one lowercase letter, and one special character
             bool hasUpper = any_of(password.begin(), password.end(), [](char c) { return isupper(c); });
             bool hasLower = any_of(password.begin(), password.end(), [](char c) { return islower(c); });
             bool hasSpecial = any_of(password.begin(), password.end(), [](char c) { return ispunct(c); });
 
             if (!hasUpper || !hasLower || !hasSpecial) {
                 cout << "Warning: Password must contain at least one uppercase letter, one lowercase letter, and one special character.\n";
-                return;
-            }
-            // If all conditions are met, set the password
-            else {
+            } else {
                 this->password = password;
+                break; // Exit loop if password is valid
             }
+        }
     }
 
-    void setId(int id) {
+    void setId() {
+        id++;
         this->id = id;
     }
     // =================Getters====================

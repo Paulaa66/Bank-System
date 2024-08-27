@@ -10,11 +10,11 @@ class Person {
 protected:
     // ================Attriputes===================
     string name, password;
-    int id;
+    static int id;
 public:
     // ============constructors==============
     Person() {
-        id = 999;
+        id++;
     }
     // ==========parameterized constructor==========
     Person(string name, string password, int id) {
@@ -24,7 +24,7 @@ public:
     }
     // ==================Setters====================
     void setName() {
-            while (true) {
+        while (true) {
             cout << "Please Enter Your Name: ";
             string name;
             cin >> name;
@@ -39,16 +39,18 @@ public:
 
             if (hasDigit) {
                 cout << "Warning: Name must contain only alphabetic characters.\n";
-            } else if (name.length() < 5 || name.length() > 20) {
+            }
+            else if (name.length() < 5 || name.length() > 20) {
                 cout << "Warning: Name must be between 5 and 20 characters.\n";
-            } else {
+            }
+            else {
                 this->name = name;
                 break; // Exit loop if name is valid
             }
         }
     }
     void setPassword() {
-              while (true) {
+        while (true) {
             cout << "Please Enter Your Password : ";
             string password;
             cin >> password;
@@ -64,7 +66,8 @@ public:
 
             if (!hasUpper || !hasLower || !hasSpecial) {
                 cout << "Warning: Password must contain at least one uppercase letter, one lowercase letter, and one special character.\n";
-            } else {
+            }
+            else {
                 this->password = password;
                 break; // Exit loop if password is valid
             }

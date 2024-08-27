@@ -7,12 +7,13 @@
 #include "Employee.h"
 using namespace std;
 
+int Person::id = 999;
+
 int main()
 {
     Employee e;
     e.setName();
     e.setPassword();
-    e.setId();
     e.setSalary();
     e.Display();
 

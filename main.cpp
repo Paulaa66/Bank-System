@@ -5,14 +5,15 @@
 #include "Person.h"
 #include "Client.h"
 #include "Employee.h"
+#include "Validation.h"
+
 using namespace std;
 
-int main()
-{
+int main() {
     Employee e;
-    e.setName();
-    e.setPassword();
-    e.setSalary();
+    e.setName("Paulaa");
+    e.setPassword("Batman53562321");
+    e.setId(50);
+    e.setSalary(6000);
     e.Display();
-
 }

@@ -1,6 +1,8 @@
 #include<iostream>
 #include<string>
 #include "Person.h"
+#include "Validation.h"
+
 using namespace std;
 
 class Client : public Person {
@@ -12,52 +14,54 @@ public:
     Client() {
         balance = 0;
     }
+
     // ==========parameterized constructor==========
     Client(string name, string password, int id, double balance) : Person(name, password, id) {
-        this->balance = balance;
+        setBalance(balance);
     }
+
     // ==================Setters====================
-    void setBalance() {
-        while(true)
-        {
-            cout << "Please Enter Your Balance :";
-            double balance;
-            cin >> balance;
-            if (balance >= 5000) {
+    void setBalance(double balance) {
+        while (true) {
+            if (Validation::validateBalance(balance)) {
                 this->balance = balance;
-            break;
-            }
-            else {
-                cout << "Balance must be more than 5000 to added\n";
+                break;
+            } else {
+                cout << "Please Insert your balance again:\n";
+                cin >> balance;
             }
         }
     }
+
     // =================Getters====================
     double getBalance() {
-        return this->balance;
+        return balance;
     }
+
     // ================Method======================
     void deposite(double amount) {
         this->balance += amount;
     }
+
     void withdraw(double amount) {
         if (amount > balance) {
             cout << "Can't withdraw this amount" << endl;
-        }
-        else
+        } else
             this->balance -= amount;
     }
+
     void transferto(double amount, Client &c) {
         if (amount <= balance) {
             balance -= amount;
             c.deposite(amount);
-        }
-        else
+        } else
             cout << "Can't withdraw this amount" << endl;
     }
+
     void checkBalance() {
         cout << "Your Balance is = " << balance << endl;
     }
+
     void Display() {
         cout << "Name     : " << name << endl;
         cout << "Id       : " << id << endl;

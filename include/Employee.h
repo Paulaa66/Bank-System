@@ -1,48 +1,48 @@
 #include <iostream>
 #include <string>
 #include "Person.h"
+#include "Validation.h"
+
 using namespace std;
 
 class Employee : public Person {
 protected:
     // ================Attriputes===================
-    double salary;
+    double salary{};
 public:
     // ============constructors==============
     Employee() {
         salary = 0;
     }
+
     // ==========parameterized constructor==========
     Employee(int id, string name, string password, double salary) : Person(name, password, id) {
-        this->salary = salary;
+        setSalary(salary);
     }
 
     // ==================Setters====================
-    void setSalary()
-     {
-        while(true)
-        {
-            cout << "Please Enter Your Salary :";
-            double salary;
-            cin >> salary;
-            if (salary >= 5000) {
+    void setSalary(double salary) {
+        while (true) {
+            if (Validation::validateSalary(salary)) {
                 this->salary = salary;
-            break;
-            }
-            else {
-                cout << "Salary must be more than 5000 to added\n";
+                break;
+            } else {
+                cout << "Please Insert your Salary again:\n";
+                cin >> salary;
             }
         }
     }
+
     // =================Getters====================
     double getSalary() {
         return salary;
     }
+
     // ================Method======================
-    void Display(){
+    void Display() {
         cout << "Name     : " << name << endl;
         cout << "Id       : " << id << endl;
         cout << "Password : " << password << endl;
         cout << "Salary  : " << salary << endl;
     }
-    };
+};

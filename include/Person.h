@@ -2,6 +2,8 @@
 #include <string>
 #include <cctype> // for isalpha, islower, isupper
 #include <algorithm> // for any_of
+#include "Validation.h"
+
 #ifndef PERSON_H
 #define PERSON_H
 using namespace std;
@@ -14,80 +16,60 @@ protected:
 public:
     // ============constructors==============
     Person() {
+        name = "No Name";
+        password = "No Password";
         id = 0;
     }
+
     // ==========parameterized constructor==========
     Person(string name, string password, int id) {
-        this->name = name;
-        this->password = password;
-        this->id = id;
+        setName(name);
+        setPassword(password);
+        setId(id);
     }
+
     // ==================Setters====================
-    void setName() {
+    void setName(string name) {
         while (true) {
-            cout << "Please Enter Your Name: ";
-            string name;
-            cin >> name;
-
-            bool hasDigit = false;
-            for (char c : name) {
-                if (isdigit(c)) {
-                    hasDigit = true;
-                    break;
-                }
-            }
-
-            if (hasDigit) {
-                cout << "Warning: Name must contain only alphabetic characters.\n";
-            }
-            else if (name.length() < 5 || name.length() > 20) {
-                cout << "Warning: Name must be between 5 and 20 characters.\n";
-            }
-            else {
+            if (Validation::validateName(name)) {
                 this->name = name;
                 break; // Exit loop if name is valid
+            } else {
+                cout << "Please Insert your name again:\n";
+                cin >> name;
             }
         }
     }
-    void setPassword() {
+
+    void setPassword(string password) {
         while (true) {
-            cout << "Please Enter Your Password : ";
-            string password;
-            cin >> password;
-
-            if (password.length() < 8 || password.length() > 20) {
-                cout << "Warning: Password must be between 8 and 20 characters.\n";
-                continue;
-            }
-
-            bool hasUpper = any_of(password.begin(), password.end(), [](char c) { return isupper(c); });
-            bool hasLower = any_of(password.begin(), password.end(), [](char c) { return islower(c); });
-            bool hasSpecial = any_of(password.begin(), password.end(), [](char c) { return ispunct(c); });
-
-            if (!hasUpper || !hasLower || !hasSpecial) {
-                cout << "Warning: Password must contain at least one uppercase letter, one lowercase letter, and one special character.\n";
-            }
-            else {
+            if (Validation::validatePassword(password)) {
                 this->password = password;
-                break; // Exit loop if password is valid
+                break; // Exit loop if name is valid
+            } else {
+                cout << "Please Insert your password again:\n";
+                cin >> password;
             }
         }
     }
 
-    void setId() {
-        id++;
+    void setId(int id) {
         this->id = id;
     }
+
     // =================Getters====================
     string getName() {
         return name;
     }
+
     string getPassword() {
         return password;
     }
+
     int getId() {
         return id;
     }
+
     // ================Method======================
     virtual void Display() = 0;
 };

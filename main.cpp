@@ -7,8 +7,6 @@
 #include "Employee.h"
 using namespace std;
 
-int Person::id = 999;
-
 int main()
 {
     Employee e;

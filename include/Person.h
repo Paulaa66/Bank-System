@@ -10,11 +10,11 @@ class Person {
 protected:
     // ================Attriputes===================
     string name, password;
-    static int id;
+    int id;
 public:
     // ============constructors==============
     Person() {
-        id++;
+        id = 0;
     }
     // ==========parameterized constructor==========
     Person(string name, string password, int id) {

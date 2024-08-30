@@ -16,4 +16,6 @@ int main() {
     e.setId(50);
     e.setSalary(6000);
     e.Display();
+    //Hi ya gma3a 3malen eh
+
 }

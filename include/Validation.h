@@ -33,10 +33,10 @@ public:
 
     //========================================================================================
     static bool validateBalance(double balance) {
-        if (balance >= 5000) {
+        if (balance >= 1500) {
             return true;
         } else {
-            cout << "Balance must be more than 5000 to added\n";
+            cout << "Warning: Balance must be more than 5000 to added\n";
             return false;
         }
     }
@@ -46,7 +46,7 @@ public:
         if (salary >= 5000) {
             return true;
         } else {
-            cout << "Salary must be more than 5000 to added\n";
+            cout << "Warning: Balance must be more than 5000 to added\n";
             return false;
         }
     }

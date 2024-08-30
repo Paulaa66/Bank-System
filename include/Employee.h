@@ -8,7 +8,7 @@ using namespace std;
 class Employee : public Person {
 protected:
     // ================Attriputes===================
-    double salary{};
+    double salary;
 public:
     // ============constructors==============
     Employee() {

@@ -11,10 +11,9 @@ using namespace std;
 
 int main() {
     Employee e;
-    e.setName("Paulaa");
-    e.setPassword("Batman53562321");
+    e.setName("Plaa");
+    e.setPassword("tman");
     e.setId(50);
     e.setSalary(6000);
-    e.Display();
     e.Display();
 }

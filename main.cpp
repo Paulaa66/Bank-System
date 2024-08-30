@@ -16,4 +16,5 @@ int main() {
     e.setId(50);
     e.setSalary(6000);
     e.Display();
+    e.Display();
 }
